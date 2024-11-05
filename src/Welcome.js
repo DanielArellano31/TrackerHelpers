@@ -3,7 +3,11 @@ import './Welcome.css';
 import formData from './App';
 import onSubmit from './App'
 import { Card } from 'react-bootstrap';
+import { useLocation, useNavigate } from 'react-router-dom';
 export const Welcome = () => {
+    const navigate = useNavigate();
+
+    const {state} = useLocation()
     return (
         <Card className='container'>
             <Card className="card-client">
@@ -14,7 +18,7 @@ export const Welcome = () => {
                 </div>
                 <p className="name-client">
                     Bienvenido
-                    <span>{`${formData.firstName} ${formData.lastName}`}</span>
+                    <span>{`${state.firstName} ${state.lastName}`}</span>
                 </p>
 
             </Card>

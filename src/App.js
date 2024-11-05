@@ -9,7 +9,9 @@ const App = () => {
   const navigate = useNavigate()
 
   const Welcome = () => {
-    navigate('./Welcome')
+    navigate('./Welcome', {
+      state:formData
+    })
   }
 
   const [formData, setFormData] = useState({
