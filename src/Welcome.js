@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './Welcome.css';
-import formData from './App';
-import onSubmit from './App'
 import { Card } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 export const Welcome = () => {
+
     const navigate = useNavigate();
 
     const {state} = useLocation()

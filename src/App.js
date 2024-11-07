@@ -10,7 +10,7 @@ const App = () => {
 
   const Welcome = () => {
     navigate('./Welcome', {
-      state:formData
+      state: formData
     })
   }
 

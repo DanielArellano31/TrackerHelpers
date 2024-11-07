@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css"
 import { Button, Card, Container, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
     const [formData, setFormData] = useState({
@@ -17,7 +18,12 @@ export const Login = () => {
         e.preventDefault();
 
         console.log('Form data submitted:', formData);
+
     };
+
+    const navigate = useNavigate()
+
+
 
     return (
         <Container className='container'>
