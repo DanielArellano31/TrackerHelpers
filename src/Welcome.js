@@ -4,17 +4,9 @@ import { Card } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Welcome = () => {
-
-    const navigate = useNavigate();
-
-    const Home = () => {
-        navigate('/Home', {
-            state: formData
-        })
-    }
-
-    const { state } = useLocation()
     
+    const { state } = useLocation()
+
     return (
         <Card className='container'>
             <Card className="card-client" onClick={Home}>

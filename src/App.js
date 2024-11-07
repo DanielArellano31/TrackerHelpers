@@ -8,7 +8,7 @@ const App = () => {
 
   const navigate = useNavigate()
 
-  const Home = () => {
+  const Welcome = () => {
     navigate('./Home', {
       state: formData
     })
@@ -108,7 +108,7 @@ const App = () => {
             />
             <span>Confirmar Contraseña</span>
           </label>
-          <button className="submit" type="submit" onClick={Home}>Registrar</button>
+          <button className="submit" type="submit" onClick={Welcome}>Registrar</button>
           <p className="signin">
             ¿Ya tienes una cuenta? <a href='./Login'>Iniciar sesion</a>
           </p>

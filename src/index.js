@@ -9,8 +9,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Login } from './Login';
-import { Welcome } from "./Welcome.js"
-import Home from './Home.js';
+import { Home } from './Home.js';
 
 
 const router = createBrowserRouter([
@@ -22,10 +21,7 @@ const router = createBrowserRouter([
     path: "/Login",
     element: <Login />
   },
-  {
-    path: "/Welcome",
-    element: <Welcome />
-  },
+
   {
     path: "/Home",
     element: <Home />
