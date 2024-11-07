@@ -1,14 +1,18 @@
-import {Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import React, { useState } from 'react';
-const Home = ()=>{
+import { useLocation } from 'react-router-dom';
 
-return(
+const Home = () => {
 
-        <>
-              <Navbar expand="lg" className="bg-body-tertiary" variant='warning'>
-     
-        <Navbar.Brand variant="warning" href="#home"> <i class="bi bi-person"></i>Hello, name user </Navbar.Brand>
+  const { state } = useLocation()
+
+  return (
+
+
+    <>
+      <Navbar expand="lg" className="bg-body-tertiary" variant='warning'>
+
+        <Navbar.Brand variant="warning" href="#home"> <i class="bi bi-person"></i>{`Hola, ${state.fisrtName}${state.lastName}`}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" variant='primary'>
@@ -27,10 +31,10 @@ return(
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-      
-    </Navbar>
-        </>
-    )
+
+      </Navbar>
+    </>
+  )
 }
 
 export default Home;
