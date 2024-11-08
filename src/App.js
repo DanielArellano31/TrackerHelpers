@@ -1,10 +1,29 @@
-import React, { useState } from 'react';
+import React, { useDebugValue, useEffect, useState } from 'react';
 import "./App.css"
 import { Card, Container, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 
 const App = () => {
+
+  const [usuarios, setUsuarios] = useState([]);
+
+  const fetchUsuarios = async ()=>{
+    try {
+      const reponse = await fetch ('/api/db')
+      if(!reponse.ok){
+        throw new Error('Error al obtener los datos del servidor!!')
+      }
+      const data = await reponse.json()
+      setUsuarios(data)
+    }catch(error){
+      console.log("Error al obtener los usuarios!!")
+    }
+  }
+  
+  useEffect (()=>{
+    fetchUsuarios();
+  }, [])
 
   const navigate = useNavigate()
 
@@ -116,8 +135,8 @@ const App = () => {
       </Card>
     </Container>
   );
-};
-
+;
+}
 
 
 export default App;
