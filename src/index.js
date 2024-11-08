@@ -8,9 +8,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Login } from './Login';
+import {Login} from "./Login.js";
 import { Home } from './Home.js';
-
 
 const router = createBrowserRouter([
   {
@@ -21,15 +20,16 @@ const router = createBrowserRouter([
     path: "/Login",
     element: <Login />
   },
-
   {
     path: "/Home",
     element: <Home />
   },
-
-
-
-]);
+  
+], {
+  future: {
+    v7_skipActionErrorRevalidation: true,
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

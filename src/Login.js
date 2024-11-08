@@ -51,7 +51,7 @@ export const Login = () => {
                             required
                         />
                     </Card>
-                    <Button type="submit" className="submit">
+                    <Button type="submit" variant='success'>
                         Iniciar Sesion
                     </Button>
                     <p className="signup-link">

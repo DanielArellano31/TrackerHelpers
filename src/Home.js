@@ -1,11 +1,13 @@
-import { Card, Nav, Navbar, NavDropdown, Row, Col } from 'react-bootstrap';
+import { Card, Nav, Navbar, NavDropdown, Row, Col, Button, DropdownButton, Dropdown } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useLocation } from 'react-router-dom';
 import vaca1 from './imagenes/vaca1.jpeg'
 import vaca2 from './imagenes/vaca2.jpeg'
 import vaca3 from './imagenes/vaca3.jpeg'
 import vaca4 from './imagenes/vaca4.jpeg'
-import { Image } from "react-bootstrap"
+import mapa from "./imagenes/mapa.png"
+import { Image } from "react-bootstrap";
+import "./Home.css"
 export const Home = () => {
 
   const { state } = useLocation()
@@ -14,9 +16,9 @@ export const Home = () => {
 
 
     <>
-      <Navbar expand="lg" className="bg-body-tertiary" variant='warning'>
+      <Navbar expand="lg" className="bg-success" variant='warning' >
 
-        <Navbar.Brand variant="warning" /* href="#home" */>  <i class="bi bi-person"></i>{` Bienvenido, ${state.firstName} ${state.lastName}`}</Navbar.Brand>
+        <Navbar.Brand  style={{color:"white"}}variant="warning" /* href="#home" */>  <i class="bi bi-person"></i>{` Bienvenido, ${state.firstName} ${state.lastName}`}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" variant='primary'>
@@ -55,10 +57,22 @@ export const Home = () => {
               <Image src={vaca4} fluid rounded style={{ margin: '5px' }} />
             </Col>
           </Row>
+          <Button variant="success" className='text-center ' href=''> Geolocalizacion de sensores</Button>
         </Card.Body>
       </Card>
+      <Card className='shadow'>
+        <Image src={mapa}></Image>
+      </Card>
+      <DropdownButton
+          className='mt-3'
+          align={{ lg: 'end' }}
+          title="Ubicaciones de sensores"
+          id="dropdown-menu-align-responsive-1"
+          variant='success'
+        >
+          <Dropdown.Item eventKey="1">21.82247-102.74788 Sin novedades</Dropdown.Item>
+          <Dropdown.Item eventKey="2" className='text-color-red'>21.82257-102.74733 Presencia detectada</Dropdown.Item>
+        </DropdownButton>,
     </>
   )
 }
-
-
