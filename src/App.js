@@ -1,6 +1,6 @@
 import React, { useDebugValue, useEffect, useState } from 'react';
 import "./App.css"
-import { Card, Container, Form } from 'react-bootstrap';
+import { Card, Container, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -59,7 +59,7 @@ const App = () => {
     <Container className='container'>
       <Card >
         <Form className="form" onSubmit={handleSubmit}>
-          <p className="title">Registrate!!!</p>
+          <p className="title" >Registrate!!!</p>
           <p className="message">Ayudanos con tus datos</p>
           <div className="flex">
             <label>
@@ -127,7 +127,7 @@ const App = () => {
             />
             <span>Confirmar Contraseña</span>
           </label>
-          <button className="submit" type="submit" onClick={Welcome}>Registrar</button>
+          <Button className="success" variant="success" type="submit" onClick={Welcome}>Registrar</Button>
           <p className="signin">
             ¿Ya tienes una cuenta? <a href='./Login'>Iniciar sesion</a>
           </p>
